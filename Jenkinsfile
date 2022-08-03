@@ -5,12 +5,12 @@ pipeline {
         AWS_DEFAULT_REGION="us-west-2" 
 	CLUSTER_NAME="default"
 	SERVICE_NAME="nodejs-container-service"
-	TASK_DEFINITION_NAME=" first-run-task-definition"
+	TASK_DEFINITION_NAME="first-run-task-definition"
 	DESIRED_COUNT="1"
         IMAGE_REPO_NAME="demo"
         IMAGE_TAG="${env.BUILD_ID}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
-	registryCredential = "jenkins-pipeline"
+	registryCredential = "admin"
     }
    
     stages {
